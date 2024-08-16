@@ -54,7 +54,7 @@ EXPOSE 8188
 # https://huggingface.co/black-forest-labs/FLUX.1-dev/blob/main/ae.sft
 COPY flux/ae.safetensors /ComfyUI/models/vae/
 # https://huggingface.co/black-forest-labs/FLUX.1-dev/blob/main/flux1-dev.sft
-COPY flux/flux1-dev.safetensors /ComfyUI/models/unet/
+COPY flux/flux1-schnell.safetensors /ComfyUI/models/unet/
 
 # Download and move lora.safetensors
 RUN wget -O /ComfyUI/models/lora/lora.safetensors "https://huggingface.co/XLabs-AI/flux-RealismLora/resolve/main/lora.safetensors?download=true"
