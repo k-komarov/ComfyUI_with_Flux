@@ -52,9 +52,12 @@ EXPOSE 8188
 
 # Due to the fact that the models are in a gated repository, we need to download them separately BEFORE building this image and store them locally in a folder called flux
 # https://huggingface.co/black-forest-labs/FLUX.1-dev/blob/main/ae.sft
-COPY flux/ae.sft /ComfyUI/models/vae/
+COPY flux/ae.safetensors /ComfyUI/models/vae/
 # https://huggingface.co/black-forest-labs/FLUX.1-dev/blob/main/flux1-dev.sft
-COPY flux/flux1-dev.sft /ComfyUI/models/unet/
+COPY flux/flux1-dev.safetensors /ComfyUI/models/unet/
+
+# Download and move lora.safetensors
+RUN wget -O /ComfyUI/models/lora/lora.safetensors "https://huggingface.co/XLabs-AI/flux-RealismLora/resolve/main/lora.safetensors?download=true"
 
 # Download and move clip_l.safetensors
 RUN wget -O /ComfyUI/models/clip/clip_l.safetensors "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors?download=true"
