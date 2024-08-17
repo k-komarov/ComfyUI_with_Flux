@@ -37,7 +37,7 @@ def build(docker_repo, tag, from_docker=None):
     docker_container = f"{username}/{docker_repo}:{tag}"
     logger.info(f"Building and pushing {docker_container}")
 
-    docker_build_arg = f"--progress=plain --platform linux/amd64 -t {docker_container}"
+    docker_build_arg = f"--progress=plain --platform=linux/amd64 -t {docker_container}"
     if from_docker is not None:
         docker_build_arg += f" --build-arg DOCKER_FROM={from_docker}"
 
