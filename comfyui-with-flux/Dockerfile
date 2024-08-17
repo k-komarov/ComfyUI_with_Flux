@@ -56,7 +56,7 @@ COPY flux/ae.safetensors /ComfyUI/models/vae/
 # https://huggingface.co/black-forest-labs/FLUX.1-dev/blob/main/flux1-dev.sft
 COPY flux/flux1-schnell.safetensors /ComfyUI/models/unet/
 #
-COPY flux/lora.safetensors /ComfyUI/models/loras/
+COPY flux/flux_realism_lora.safetensors.safetensors /ComfyUI/models/loras/
 
 # Download and move clip_l.safetensors
 RUN wget -O /ComfyUI/models/clip/clip_l.safetensors "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors?download=true"
